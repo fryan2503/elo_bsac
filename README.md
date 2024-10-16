@@ -12,9 +12,7 @@ This project uses a Flask-based web application to allow users to compare studen
 
 - **MongoDB Integration**: Data is stored in a MongoDB collection hosted on a university server. MongoDB is used for storing survey responses and updating organization ratings.
 
-# ELO Rating System
 
-The ELO rating system is used to calculate the relative skill levels of student organizations based on pairwise comparisons. It updates ratings based on the outcome of matches between two organizations.
 
 # ELO Rating System
 
@@ -28,17 +26,17 @@ $$
 R_{\text{new}} = R_{\text{current}} + K \times (\text{Outcome} - E)
 $$
 
-- \( R_{\text{new}} \): New rating of the organization.
-- \( R_{\text{current}} \): Current rating of the organization.
-- \( K \): The K-factor, which determines the maximum possible rating change (default is 32).
-- \( \text{Outcome} \): The result of the match (1 if the organization wins, 0 if it loses).
-- \( E \): Expected outcome, calculated as:
+- $\( R_{\text{new}} \)$: New rating of the organization.
+- $\( R_{\text{current}} \)$: Current rating of the organization.
+- $\( K \)$: The K-factor, which determines the maximum possible rating change (default is 32).
+- $\( \text{Outcome} \)$: The result of the match (1 if the organization wins, 0 if it loses).
+- $\( E \)$: Expected outcome, calculated as:
 
 $$
 E = \frac{1}{1 + 10^{\frac{R_{\text{opponent}} - R_{\text{current}}}{400}}}
 $$
 
-- \( R_{\text{opponent}} \): The rating of the opposing organization.
+- $\( R_{\text{opponent}} \)$: The rating of the opposing organization.
 
 ## How We Use the ELO System
 
@@ -59,6 +57,3 @@ Using this system, we can produce insights such as:
 This allows us to quantify the impact of specific factors on student organization performance.
  as:
 
-> "Top quartile of student organizations that hold regular elections outperform the bottom quartile by 3x in terms of ELO rating."
-
-This allows us to quantify the impact of specific factors on student organization performance.
