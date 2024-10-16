@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Comparison Survey</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        form { display: flex; flex-direction: column; }
+        .comparison { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; }
+        .options { display: flex; justify-content: space-around; margin-top: 10px; }
+        .option-box { border: 1px solid #ccc; padding: 10px; border-radius: 5px; width: 30%; text-align: center; }
+        input[type="submit"] { cursor: pointer; margin-top: 20px; padding: 10px 20px; }
+    </style>
+</head>
+<body>
+    <h1>Club Comparison Survey</h1>
+    <p>Hello, {{ name }}! Please complete the following {{ num_comparisons }} comparisons.</p>
+    <form action="{{ url_for('survey') }}" method="post">
+        {% for i in range(num_comparisons) %}
+        <div class="comparison">
+            <h3>Comparison {{ i + 1 }}</h3>
+            <p>
+                <strong>{{ org1s[i] }}</strong> vs <strong>{{ org2s[i] }}</strong>
+            </p>
+            <input type="hidden" name="org1_{{ i }}" value="{{ org1s[i] }}">
+            <input type="hidden" name="org2_{{ i }}" value="{{ org2s[i] }}">
+            <div class="options">
+                <label class="option-box">
+                    <input type="radio" name="outcome_{{ i }}" value="1" required> {{ org1s[i] }} 
+                </label>
+                <label class="option-box">
+                    <input type="radio" name="outcome_{{ i }}" value="0" required> {{ org2s[i] }} 
+                </label>
+                <label class="option-box">
+                    <input type="radio" name="outcome_{{ i }}" value="2" required> Neither
+                </label>
+            </div>
+        </div>
+        {% endfor %}
+        <input type="submit" value="Submit Survey">
+    </form>
+</body>
+</html>

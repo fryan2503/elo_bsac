@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Setup</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        form { display: flex; flex-direction: column; }
+        label, input, select { margin-bottom: 10px; }
+        input[type="submit"] { cursor: pointer; }
+        select {
+            height: 400px; /* Adjust height as needed */
+            width: 100%; /* Adjust width as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey Setup</h1>
+    <form action="/" method="post">
+
+        <label for="name">Enter your name</label>  
+        <input type="text" id="name" name="name" required>
+
+        <label for="num_comparisons">Number of comparisons:</label>
+        <input type="number" id="num_comparisons" name="num_comparisons" min="1" required>
+
+        <label for="clubs_inv">Clubs you're involved in:</label>
+        <select id="clubs_inv" name="clubs_inv" multiple>
+            {% for org in organizations %}
+            <option value="{{ org }}">{{ org }}</option>
+            {% endfor %}
+        </select>
+        <small>Hold Ctrl (Windows) or Cmd (Mac) to select multiple clubs</small>
+
+        <input type="submit" value="Start Survey">
+    </form>
+</body>
+</html>
