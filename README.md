@@ -2,16 +2,21 @@
 
 This project, created for the **Business Student Advisory Council (BSAC) at Miami University**, aims to identify the key factors that set apart high-performing student organizations. We do this through an ELO rating system that compares organizations and adjusts their ratings based on survey results.
 
-## Overview
+## Libraries Used
 
-This project uses a Flask-based web application to allow users to compare student organizations in terms of performance. The results are then stored in a MongoDB database, and the organizations' ratings are updated using an ELO rating algorithm.
+The following libraries are used in this project:
 
-### Key Components
+- **json**
+- **random**
+- **datetime**
+- **numpy**
+- **pandas**
+- **flask**
+- **pymongo**
+  
+## Contributing
 
-- **Python Libraries**: The project uses various Python libraries such as `Flask` for web development, `pandas` and `numpy` for data manipulation, `pymongo` for interacting with MongoDB, and standard libraries like `random` and `datetime` for other functionalities.
-
-- **MongoDB Integration**: Data is stored in a MongoDB collection hosted on a university server. MongoDB is used for storing survey responses and updating organization ratings.
-
+We welcome contributions to enhance the project. Please fork the repository and submit a pull request with your changes.
 
 
 # ELO Rating System
