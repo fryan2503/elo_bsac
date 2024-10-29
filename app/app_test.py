@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 client = MongoClient('mongodb://singhr7:farmerbigdata@mongodb.fsb.miamioh.edu:27017/', authSource="admin")
 
-
+'''
 try:
     client.admin.command('ping')
     print("Pinged your deployment. You successfully connected to MongoDB!")
@@ -21,7 +21,7 @@ except Exception as e:
     print(e)
 
 db = client.singhr7.elo_outcomes_raw
-
+'''
 
 # Load organizations data
 organizations = pd.read_csv("clubs.csv")
