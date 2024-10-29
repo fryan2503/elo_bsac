@@ -8,8 +8,17 @@
         body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
         form { display: flex; flex-direction: column; }
         .comparison { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; }
-        .options { display: flex; justify-content: space-around; margin-top: 10px; }
-        .option-box { border: 1px solid #ccc; padding: 10px; border-radius: 5px; width: 30%; text-align: center; }
+        .options { display: flex; justify-content: space-between; margin-top: 10px; }
+        .option-box { border: 1px solid #ccc; padding: 10px; border-radius: 5px; width: 45%; text-align: center; }
+        .neither-container { display: flex; justify-content: center; margin-top: 10px; } /* Center container for the "Neither" option */
+        .neither-option {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            width: 50%;
+            text-align: center;
+            background-color: #fad1d0;
+        }
         input[type="submit"] { cursor: pointer; margin-top: 20px; padding: 10px 20px; }
     </style>
 </head>
@@ -32,7 +41,9 @@
                 <label class="option-box">
                     <input type="radio" name="outcome_{{ i }}" value="0" required> {{ org2s[i] }} 
                 </label>
-                <label class="option-box">
+            </div>
+            <div class="neither-container">
+                <label class="neither-option">
                     <input type="radio" name="outcome_{{ i }}" value="2" required> Neither
                 </label>
             </div>
