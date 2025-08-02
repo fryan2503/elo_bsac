@@ -11,7 +11,7 @@ The following libraries are used in this project:
 - **datetime**
 - **numpy**
 - **pandas**
-- **flask**
+- **streamlit**
 - **pymongo**
   
 ## Contributing
@@ -60,5 +60,18 @@ Using this system, we can produce insights such as:
 > "Top quartile of student organizations that hold regular elections outperform the bottom quartile by 3x in terms of ELO rating."
 
 This allows us to quantify the impact of specific factors on student organization performance.
- as:
+
+## Running with Streamlit
+
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Start the web application with:
+
+```bash
+streamlit run streamlit_app.py
+```
 
